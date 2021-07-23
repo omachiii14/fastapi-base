@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 from functools import lru_cache
 
 from pydantic import AnyHttpUrl, BaseSettings, EmailStr, HttpUrl, PostgresDsn, validator
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+
 
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
@@ -88,5 +90,6 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+
 
 settings = Settings()
