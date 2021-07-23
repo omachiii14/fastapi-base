@@ -9,7 +9,7 @@ SQLALCHEMY_DATABASE_URL = PostgresDsn.build(
     user=settings.POSTGRES_USER,
     password=settings.POSTGRES_PASSWORD,
     host=settings.POSTGRES_SERVER,
-    path=f"/{settings.POSTGRES_DB}_test"
+    path=f"/{settings.POSTGRES_DB}_test",
 )
 engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
